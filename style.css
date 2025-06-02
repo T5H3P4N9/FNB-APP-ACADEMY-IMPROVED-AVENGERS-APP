@@ -1,32 +1,30 @@
+/* === GLOBAL RESET === */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: Helvetica, sans-serif;
+  background-color: black;
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0;
-  background-color: black;
-  color: #ffffff;
 }
 
 /* === GALLERY IMAGE STYLING === */
 .gallery img {
-  width: 800px;
+  width: 300px;
   border-radius: 20px;
   margin: 10px;
   border: 2px solid blue;
   overflow: hidden;
-  animation-name: slideUp;
-  animation-duration: 2s; 
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
+  animation: slideUp 2s forwards;
   transition: all 0.4s ease-in-out;
 }
 
-/* Specific durations for each row */
 .gallery .row1 img {
   animation-duration: 2s;
 }
@@ -37,79 +35,75 @@ body {
   animation-duration: 5s;
 }
 
-/* Hover effect: only style changes, no animation */
 .gallery img:hover {
   border: 2px solid hsl(0, 65%, 52%);
-  width: 900px;
+  width: 340px;
 }
 
-/* === HEADINGS & TEXT === */
-h2 {
+/* === HEADINGS === */
+h2, h4 {
   font-family: Impact, fantasy;
   text-align: center;
   font-size: 30px;
-  color: rgb(16, 88, 221);
   font-style: italic;
+  color: rgb(16, 88, 221);
 }
 
 h4 {
-  font-family: Impact, fantasy;
-  text-align: center;
-  font-size: 30px;
   color: rgb(6, 74, 202);
-  font-style: italic;
 }
 
 p {
   font-family: Helvetica, sans-serif;
 }
 
-/* === MENU & NAVBAR === */
+/* === NAVIGATION BAR === */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  background-color: hsl(219, 85%, 47%);
+  width: 100%;
+  height: 120px;
+  animation: fadeIn 2s;
+  position: relative;
+}
+
 .menu img {
   height: 80px;
   width: 200px;
-  margin-bottom: 10px;
-  margin-left: 100px;
   border-radius: 30px;
   border: 1px solid red;
   animation: grow 3s infinite ease-in-out;
 }
 
+/* Navbar Links */
 .navbar {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 1200px;
+  gap: 30px;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 100px;
-  align-items: center;
-  width: 100%;
-  height: 120px;
-  background-color: hsl(219, 85%, 47%);
-  padding-top: 12px;
-  animation: fadeIn 2s;
-  overflow: hidden;
-}
-
-.menu a {
+.navbar a {
   color: #ffffff;
-  font-family: Helvetica, sans-serif;
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 800;
-  padding: 0 20px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
-.menu a:hover {
-  font-size: 2em;
+.navbar a:hover {
+  font-size: 1.6em;
   color: hsl(0, 84%, 46%);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 
 /* === GALLERY === */
@@ -120,6 +114,7 @@ p {
   align-items: center;
   background-color: black;
   overflow: hidden;
+  padding: 20px;
 }
 
 /* === CONTACT === */
@@ -161,56 +156,68 @@ p {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .menu {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .navbar.show {
+    display: flex;
   }
 
   .menu img {
     margin-left: 0;
-  }
-
-  .navbar {
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
+    margin-bottom: 10px;
   }
 
   .gallery img {
     width: 90%;
+    height: auto;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: center;
   }
 }
-/* iPhone SE (smallest common size) */
+
 @media only screen and (max-width: 375px) {
   body {
     font-size: 14px;
   }
+
   .card {
     width: 100%;
     margin: 10px auto;
   }
 }
 
-/* iPhone 14 Pro */
 @media only screen and (max-width: 393px) {
-  .nav-bar {
+  .navbar {
     flex-direction: column;
     align-items: center;
   }
-  .hero-text {
-    font-size: 1.5rem;
-  }
 }
 
-/* iPhone 14 Pro Max and similar */
 @media only screen and (max-width: 430px) {
   .gallery {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
   }
 }
