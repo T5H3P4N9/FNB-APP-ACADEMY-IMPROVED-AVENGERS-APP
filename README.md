@@ -39,13 +39,12 @@ Tested and optimized for:
 ## 📸 Preview
 
 You can include a screenshot of one of the character pages here:
-```html
-(images/p1.png)
-(images/p2.png)
-(images/p3.png)
-(images/p4.png)
-(images/p5.png)
-(images/p6.png) 
-(images/p7.png)
+![Screenshot](images/p1.png)
+![Screenshot](images/p2.png)
+![Screenshot](images/p3.png)
+![Screenshot](images/p4.png)
+![Screenshot](images/p5.png)
+![Screenshot](images/p6.png) 
+![Screenshot](images/p7.png)
 
 
