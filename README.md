@@ -40,12 +40,12 @@ Tested and optimized for:
 
 You can include a screenshot of one of the character pages here:
 ```html
-<img src="images/p1.png" alt="Iron Man Profile" />
-<img src="images/p2.png" alt=""/>
-<img src="images/p3.png" alt=""/>
-<img src="images/p4.png" alt=""/>
-<img src="images/p5.png" alt=""/>
-<img src="images/p6.png" alt=""/>
-<img src="images/p7.png" alt=""/>
+(images/p1.png)
+(images/p2.png)
+(images/p3.png)
+(images/p4.png)
+(images/p5.png)
+(images/p6.png) 
+(images/p7.png)
 
 
